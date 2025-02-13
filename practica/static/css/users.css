@@ -1,0 +1,21 @@
+.container{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(4, 250px);
+    gap: 20px;
+}
+
+.container > div{
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    border: 1px solid black;
+    height: 200px;
+    width: auto;
+}
+
+img{
+    height: 150px;
+    width: 200px;
+}

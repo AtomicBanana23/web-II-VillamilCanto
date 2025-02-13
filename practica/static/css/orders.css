@@ -1,0 +1,16 @@
+h1{
+    text-align: center;
+    color: blue;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.container div{
+    text-align: center;
+    color: chartreuse;
+    font-size: 20px;
+    border: 1px solid black;
+}
