@@ -1,0 +1,22 @@
+.addres-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas de igual tamaño */
+    gap: 10px; /* Espacio entre celdas */
+    padding: 10px;
+
+}
+
+.addres-item{
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.grid-header {
+    font-weight: bold;
+    background-color: #f4f4f4;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 2px solid #ccc;
+}

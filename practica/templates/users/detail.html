@@ -1,0 +1,58 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block content %}
+
+{% block styles %}
+
+<link rel="stylesheet" href="{% static 'css/users_detail.css' %}">
+
+{% endblock %}
+
+<img height="150px" width="200px" src={{user.photo}}>
+<form method="UPDATE" class="update-user-form" id="update-user-form">
+    <input type="hidden" id="csrftoken" value="{{csrf_token}}">
+    <input type="hidden" id="userId" value={{user.id}}>
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" minlength="1" value={{user.name}} required><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" value={{user.email}} required><br>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" minlength="1" value={{user.age}} required><br>
+
+    <label for="rfc">RFC:</label>
+    <input type="text" id="rfc" name="rfc" minlength="13" maxlength="13" value={{user.rfc}} required><br>
+
+    <label for="photo">Photo URL:</label>
+    <input type="text" id="photo" name="photo" value={{user.photo}} required><br>
+
+    <button id="update-user-button">Update User</button>
+</form>
+<div>
+
+    <div class="addres-container">
+    <div class="grid-header">País</div>
+    <div class="grid-header">Ciudad</div>
+    <div class="grid-header">Calle</div>
+    <div class="grid-header">Código Postal</div>
+        {% for item in user_addres %}
+        <div class="addres-item">{{item.country}}</div>
+        <div class="addres-item">{{item.city}}</div>
+        <div class="addres-item">{{item.street}}</div>
+        <div class="addres-item">{{item.zip_code}}</div>
+        {% endfor %}
+     </div>
+
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+<script src="{% static 'js/userUPDATE.js' %}">
+
+</script>
+
+{% endblock%}

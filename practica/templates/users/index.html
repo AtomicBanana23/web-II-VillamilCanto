@@ -1,23 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/users.css' %}">
-    <title>Users</title>
-</head>
-<body>
+{% extends "base/base.html" %}
+{% load static %}
+{% block styles%}
+
+<link rel="stylesheet" href="{% static 'css/users.css' %}">
+
+{% endblock %}
+
+{% block content %}
     <h1>Burger</h1>
+    <a href="create">Create new user</a>
     <div class="container">
-            {% for u in users %}
-            <div>
-                <img src={{u.photo}}>
-                <div>name:{{u.name}}</div>
-                <div>id:{{u.id}} - age:{{u.age}}</div>
-            </div>
-            {% endfor %}
+        {% for item in users %}
+        {% include 'components/userCard.html' with name=item.name email=item.email id=item.id photo=item.photo age=item.age %}
+        {% endfor %}
+        
     </div>
     
-</body>
+{% endblock %}
 </html>

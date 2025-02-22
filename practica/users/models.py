@@ -27,5 +27,3 @@ class User_addres(models.Model):
 
     def __str__(self):
         return self.street
-
-    from django.db import models
