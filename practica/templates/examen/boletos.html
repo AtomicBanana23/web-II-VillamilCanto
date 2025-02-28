@@ -1,0 +1,23 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block styles%}
+
+<link rel="stylesheet" href="{% static 'css/boletos.css' %}">
+
+{% endblock %}
+
+
+
+{% block content %}
+
+<h1>Pantalla de boletos</h1>
+
+    <div class="container">
+        {% for item in boleto %}
+        {% include 'components/boletoCard.html' with id=item.id precio=item.precio tipo=item.boletoTipo_id.name localidad=item.evento_id.localidad_id.name %}
+        {% endfor %}
+        
+    </div>
+    
+{% endblock %}
+</html>

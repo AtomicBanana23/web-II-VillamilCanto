@@ -1,0 +1,22 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block styles%}
+
+<link rel="stylesheet" href="{% static 'css/eventos.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+<h1>Pantalla de eventos</h1>
+
+<div class="container">
+
+    {% for item in evento %}
+    {% include 'components/eventCard.html' with id=item.id localidad=item.localidad_id.name %}
+    {% endfor %}
+    
+</div>
+    
+{% endblock %}
+</html>
