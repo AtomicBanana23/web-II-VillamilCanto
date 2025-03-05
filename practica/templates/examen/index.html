@@ -1,0 +1,114 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block styles%}
+
+<link rel="stylesheet" href="{% static 'css/examen.css' %}">
+<link rel="stylesheet" href="{% static 'css/eventoCard.css' %}">
+
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="img-container">
+        <div class="column1">
+            <img id="img1" src="https://img.freepik.com/psd-gratis/plantilla-redes-sociales-bienvenida-al-carnaval_220664-5244.jpg?t=st=1740730264~exp=1740733864~hmac=eed37ee572d96432d1c70353cd783928078d5426dcf88195743032869ba74c3d&w=740"></img>
+            <div>
+                <img id="img2" src="https://img.freepik.com/vector-premium/diseno-conceptual-festival-brasileno-festa-junina-elementos-decorativos-disposicion-circular_288411-1969.jpg?w=740"></img>
+                <img id="img3" src="https://img.freepik.com/psd-gratis/redes-sociales-alimentan-carnaval-economia-venta-productos-oferta_220664-2665.jpg?t=st=1740730634~exp=1740734234~hmac=f1537c988823721675ad0cc5d4f86ad8852b5e61c5bad99e2c34c6d73b244e8b&w=740"></img>
+    
+            </div>
+    
+        </div>
+        <div class="column2">
+            <img id="img4" src="https://img.freepik.com/psd-premium/disfraces-redes-sociales-tu-carnaval_220664-6324.jpg?w=740"></img>
+            <img id="img5" src="https://img.freepik.com/vector-gratis/gradiente-carnaval-barranquilla-ilustracion_52683-153960.jpg?t=st=1740731057~exp=1740734657~hmac=5d007805af601e3ddf56ab4c9c6458085e7b4bd791a0ab4f489ef2e9af6b19a6&w=740"></img>
+    
+        </div>
+    </div>
+</div>
+
+
+<h1>Noticias</h1>
+<div class="noticias">
+    <div>
+        <div class="noticias-element">
+            <img src="https://img.freepik.com/vector-gratis/fondo-plano-celebracion-carnaval-barranquilla_23-2151146806.jpg?t=st=1740731556~exp=1740735156~hmac=596c80b2aeab3187e56d0a7e3a92f39fe11721f3dd0ea09e133188d591315bc8&w=1060">
+            <h3>Noticia</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+        </div>
+
+        <div class="noticias-element">
+            <img src="https://img.freepik.com/vector-gratis/fondo-plano-celebracion-carnaval-barranquilla_23-2151146806.jpg?t=st=1740731556~exp=1740735156~hmac=596c80b2aeab3187e56d0a7e3a92f39fe11721f3dd0ea09e133188d591315bc8&w=1060">
+            <h3>Noticia</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+        </div>
+
+    </div>
+    <div>
+        <div class="evento-container">
+            <div class="evento-item">
+                <div>
+                    <img src="https://img.freepik.com/fotos-premium/foto-3d-mujer-traje-colorido-plumas-coloridas-cabeza_1227606-10209.jpg?w=740">
+            
+                </div>
+                <div class="card-text">
+                    <div>
+                        <div class="titulo">Evento: Hue hue hue</div>
+                        <div class="subtitulo">Localidad: Battery zone</div>
+                        <div class="subtitulo">Descripción:</div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div class="centrar-boton">
+                        <button class="boton-ver-boletos" data-id="{{id}}">Boletos</button>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="evento-container">
+            <div class="evento-item">
+                <div>
+                    <img src="https://img.freepik.com/fotos-premium/foto-3d-mujer-traje-colorido-plumas-coloridas-cabeza_1227606-10209.jpg?w=740">
+            
+                </div>
+                <div class="card-text">
+                    <div>
+                        <div class="titulo">Evento: Empanadas</div>
+                        <div class="subtitulo">Localidad: Nonono</div>
+                        <div class="subtitulo">Descripción:</div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div class="centrar-boton">
+                        <button class="boton-ver-boletos" data-id="{{id}}">Boletos</button>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="evento-container">
+            <div class="evento-item">
+                <div>
+                    <img src="https://img.freepik.com/fotos-premium/foto-3d-mujer-traje-colorido-plumas-coloridas-cabeza_1227606-10209.jpg?w=740">
+            
+                </div>
+                <div class="card-text">
+                    <div>
+                        <div class="titulo">Evento: 1</div>
+                        <div class="subtitulo">Localidad: Sisisi</div>
+                        <div class="subtitulo">Descripción:</div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div class="centrar-boton">
+                        <button class="boton-ver-boletos" data-id="{{id}}">Boletos</button>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+{% endblock %}
+</html>

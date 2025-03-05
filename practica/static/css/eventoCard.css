@@ -1,0 +1,52 @@
+.evento-item{
+    margin-bottom: 5px;
+    border: solid 1px;
+    border-color: black;
+    display: flex;
+    flex-direction: row;
+}
+
+.evento-item img {
+    height: 200px;
+    width: 200px;
+}
+
+.titulo{
+    margin-left: 10%;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.subtitulo{
+    padding-top: 5%;
+    margin-left: 10%;
+    font-weight: bold;
+}
+
+.evento-item p{
+    margin-left: 10%;
+}
+
+.centrar-boton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-text{
+    display: flex;
+    flex-direction: column;
+}
+
+.evento-item button{
+    background: #2525b3;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    margin-top: 10px;
+    width: auto;
+}

@@ -1,0 +1,28 @@
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* .evento-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 10px;
+    gap: 20px;
+} */
+
+h1{
+    margin-left: 45%;
+}
+
+a button{
+    background: #1b1b1b;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    margin-top: 10px;
+    width: auto;
+}
+
