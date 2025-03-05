@@ -1,20 +1,13 @@
 nav{
+    margin: 15px;
     display: flex;
+    gap: 20px;
 }
 
-nav > div{
-    border: solid;
-    border-radius: 3px;
-    border-color: black;
+.nav-index{
+    flex-grow: 4;
 }
 
-.logo-menu{
-    display: flex;
+.nav-element{
+    flex-grow: 1;
 }
-
-.logo-menu > a{
-    border: solid;
-    border-radius: 1px;
-    border-color: red;
-}
-

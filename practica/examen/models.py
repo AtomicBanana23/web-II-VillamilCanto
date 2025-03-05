@@ -8,18 +8,10 @@ class localidad(models.Model):
     def __str__(self):
         return self.name
     
-class producto(models.Model):
-    name = models.CharField(max_length=100)
-    precio = models.FloatField()
-    localidad_id = models.ForeignKey(localidad, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.name
-    
 class evento(models.Model):
     name = models.CharField(max_length=100)
-    fecha_inicio = models.DateField()
-    fecha_fin = models.DateField()
+    fecha_inicio = models.DateTimeField()
+    fecha_fin = models.DateTimeField()
     localidad_id = models.ForeignKey(localidad, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -35,5 +27,14 @@ class boleto(models.Model):
     precio = models.FloatField()
     boletoTipo_id = models.ForeignKey(boletoTipo, on_delete=models.CASCADE)
     evento_id = models.ForeignKey(evento, on_delete=models.CASCADE)
-    fecha = models.DateField()
+    fecha = models.DateTimeField()
+
+class producto(models.Model):
+    name = models.CharField(max_length=100)
+    precio = models.FloatField()
+    localidad_id = models.ForeignKey(localidad, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
     

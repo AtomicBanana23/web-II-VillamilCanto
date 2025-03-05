@@ -3,20 +3,30 @@
 {% block styles%}
 
 <link rel="stylesheet" href="{% static 'css/eventos.css' %}">
+<link rel="stylesheet" href="{% static 'css/eventoCard.css' %}">
 
 {% endblock %}
 
 {% block content %}
 
-<h1>Pantalla de eventos</h1>
+<h1>Eventos</h1>
 
-<div class="container">
+<input type="hidden" id="csrftoken" value="{{csrf_token}}">
+
+<a href="crearEvento"><button>Crear evento</button></a>
+
+<div class="evento-container">
 
     {% for item in evento %}
-    {% include 'components/eventCard.html' with id=item.id localidad=item.localidad_id.name %}
+    {% include 'components/eventCard.html' with name=item.name id=item.id localidad=item.localidad_id.name %}
     {% endfor %}
     
 </div>
     
 {% endblock %}
-</html>
+
+{% block scripts %}
+
+<script src="{% static 'js/boletoGET.js' %}"></script>
+
+{% endblock%}

@@ -1,0 +1,76 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block content %}
+
+{% block styles%}
+
+<link rel="stylesheet" href="{% static 'css/crearEvento.css' %}">
+
+{% endblock %}
+
+<div class="container">
+    <div class="form-container">
+        <h3>Agregar Evento</h3>
+        <div id="mensaje" style="display:none;"></div>
+        <form method="POST" class="crear-evento-form" id="crear-evento-form">
+            <input type="hidden" id="csrftoken" value="{{csrf_token}}">
+            <input type="text" id="name" name="name" minlength="1" placeholder="Nombre del evento" required><br>
+        
+            <p>Fecha de inicio</p>
+            <input type="datetime-local" id="fecha_inicio" name="fecha_inicio" required><br>
+        
+            <p>Fecha final</p>
+            <input type="datetime-local" id="fecha_fin" name="fecha_fin" required><br>
+        
+            <p>Localidad</p>
+            <select id="localidad" name="localidad">
+                {% for item in localidad %}
+                <option value={{item.id}}>{{item.name}}</option>
+
+                {% endfor %}
+            </select>
+        </form>
+
+        <button id="crear-evento-button">Agregar</button>
+    </div>
+
+    <div class="reglas-container">
+        <h3>Reglas</h3>
+        <p>Nungún campo debe de quedar vacío</p>
+        <p>La fecha Fin no puede ser menor a la fecha inicio</p>
+        <p>La fecha de inicio debe ser mayor al día de hoy</p>
+        <p>No puedes agregar dos eventos seguidos de la misma localidad</p>
+        <p>Mostrar mensaje de guardado o de error en caso de fallar</p>
+        <p>El envío de información debe ser por medio del método FETCH de Js</p>
+        <p>El botón "Eliminar" deberá de hacerse por medio del método FETCH de Js</p>
+    </div>
+
+</div>
+
+<h2>Eventos recientemente agregados</h2>
+
+<div>
+    <div class="addres-container">
+        <div class="grid-header">Nombre</div>
+        <div class="grid-header">Fecha Inicio</div>
+        <div class="grid-header">Fecha Fin</div>
+        <div class="grid-header">Localidad</div>
+        <div class="grid-header">Acciones</div>
+        {% for item in evento %}
+        <div class="addres-item">{{item.name}}</div>
+        <div class="addres-item">{{item.fecha_inicio}}</div>
+        <div class="addres-item">{{item.fecha_fin}}</div>
+        <div class="addres-item">{{item.localidad_id.name}}</div>
+        <div class="addres-item"><button class="boton-eliminar" data-id="{{item.id}}">Eliminar</button></div>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+
+<script src="{% static 'js/eventoPOST.js' %}"></script>
+<script src="{% static 'js/eventoDELETE.js' %}"></script>
+
+{% endblock%}

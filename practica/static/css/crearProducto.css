@@ -1,0 +1,80 @@
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    display: flex;
+    align-items:start;
+    justify-content: space-around;
+}
+
+h3{
+    font-weight: bold;
+}
+
+#crear-producto-button{
+    background: #1a1a1b;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    margin-top: 10px;
+    width: 25%;
+    margin-left: 40%;
+}
+
+.addres-container{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    padding: 10px;
+
+}
+
+.addres-item{
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    text-align: center;
+    border: solid 1px;
+    border-color: rgb(0, 0, 0);
+}
+
+.addres-item > button{
+    background: #ff0000;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    margin-top: 10px;
+}
+
+.grid-header {
+    color: white;
+    font-weight: bold;
+    background-color: #000b9e;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 2px solid #ccc;
+}
+
+input, select {
+    margin-top: 10px;
+    width: 100%;  /* Ocupa todo el ancho del div contenedor */
+    padding: 12px;  /* Aumenta el tamaño interno */
+    font-size: 16px; /* Texto más grande */
+    border: 1px solid #ccc;  /* Borde ligero */
+    border-radius: 5px;  /* Bordes redondeados */
+    box-sizing: border-box;  /* Evita que el padding afecte el ancho */
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+}

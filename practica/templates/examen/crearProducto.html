@@ -1,0 +1,70 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block content %}
+
+{% block styles%}
+
+<link rel="stylesheet" href="{% static 'css/crearProducto.css' %}">
+
+{% endblock %}
+
+<div class="container">
+    <div class="form-container">
+        <h3>Agregar Producto</h3>
+        <div id="mensaje" style="display:none;"></div>
+        <form method="POST" class="crear-producto-form" id="crear-producto-form">
+            <input type="hidden" id="csrftoken" value="{{csrf_token}}">
+            <input type="text" id="name" name="name" placeholder="Nombre del producto" required><br>
+        
+            <input type="number" min="1" placeholder="Precio" id="precio" name="precio" required><br>
+        
+            <p>Localidad</p>
+            <select id="localidad" name="localidad">
+                {% for item in localidad %}
+                <option value={{item.id}}>{{item.name}}</option>
+
+                {% endfor %}
+            </select>
+        </form>
+
+        <button id="crear-producto-button">Agregar</button>
+    </div>
+
+    <div class="reglas-container">
+        <h3>Reglas</h3>
+        <p>Nungún campo debe de quedar vacío</p>
+        <p>Mostrar mensaje de guardado o de error en caso de fallar</p>
+        <p>El envío de información debe ser por medio del método FETCH de Js</p>
+        <p>El botón "Eliminar" deberá de hacerse por medio del método FETCH de Js</p>
+        <p>El precio del producto debe ser mayor a 0</p>
+        <p>Solo se pueden agregar 10 productos al día</p>
+    </div>
+</div>
+
+<h2>Productos recientemente agregados</h2>
+
+<div>
+    <div class="addres-container">
+        <div class="grid-header">Nombre</div>
+        <div class="grid-header">Precio</div>
+        <div class="grid-header">Fecha de creación</div>
+        <div class="grid-header">Localidad</div>
+        <div class="grid-header">Acciones</div>
+        {% for item in producto %}
+        <div class="addres-item">{{item.name}}</div>
+        <div class="addres-item">{{item.precio}}</div>
+        <div class="addres-item">{{item.created_at}}</div>
+        <div class="addres-item">{{item.localidad_id.name}}</div>
+        <div class="addres-item"><button class="boton-eliminar" data-id="{{item.id}}">Eliminar</button></div>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+
+<script src="{% static 'js/productoPOST.js' %}"></script>
+<script src="{% static 'js/productoDELETE.js' %}"></script>
+
+{% endblock%}
