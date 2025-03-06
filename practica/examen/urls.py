@@ -13,5 +13,6 @@ urlpatterns = [
     path("createProducto", views.createProductoByFetch, name="createProducto"),
     path("borrarProducto", views.borrarProductoByFetch, name="borrarProducto"),
     path("verBoletos/<int:id>", views.verBoletosbyFetch, name="verBoletos"),
+    path("productos", views.productosView, name="productos")
 
 ]

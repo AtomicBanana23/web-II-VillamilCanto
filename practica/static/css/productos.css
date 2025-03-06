@@ -1,0 +1,44 @@
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.producto-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 10px;
+
+}
+.producto-item{
+    padding: 10px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.producto-item div{
+    margin: 5px;
+}
+
+button{
+    background: #1a1a1b;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    margin-top: 10px;
+    width: auto;
+}
+
+.titulo{
+    margin-left: 40%;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+img{
+    height: 200px;
+    width: 200px;
+}
+

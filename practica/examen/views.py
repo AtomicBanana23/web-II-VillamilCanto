@@ -100,3 +100,12 @@ def verBoletosbyFetch(request, id):
     }
     
     return render(request, 'examen/verBoletos.html', data)
+
+def productosView(request):
+    productos = producto.objects.all()
+
+    data = {
+        "producto" : productos
+    }
+
+    return render(request, 'examen/productos.html', data)

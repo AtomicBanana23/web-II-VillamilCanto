@@ -1,0 +1,24 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block styles%}
+
+<link rel="stylesheet" href="{% static 'css/productos.css' %}">
+
+{% endblock %}
+
+
+
+{% block content %}
+
+<h1>Pantalla de productos</h1>
+
+<a href="/examen/crearProducto"><button>Agregar producto</button></a>
+
+    <div class="producto-container">
+        {% for item in producto %}
+        {% include 'components/productoCard.html' with id=item.id precio=item.precio localidad=item.localidad_id %}
+        {% endfor %}
+        
+    </div>
+    
+{% endblock %}
