@@ -1,0 +1,15 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Columnas automáticas */
+    gap: 16px; /* Espacio entre los elementos */
+    padding: 16px;
+}
+
+.container div {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
