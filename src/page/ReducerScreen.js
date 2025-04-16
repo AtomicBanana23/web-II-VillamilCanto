@@ -17,7 +17,7 @@ function calculadora(state, action){
 
 export default function ReducerScreen() {
     const [state, dispatch] = useReducer(calculadora, {numero:0})
-    const [numero, setNumero] = useState(0)
+    const [numero, setNumero] = useState(0) 
     return(
         <div>
             <h1>Reducer Screen</h1>
