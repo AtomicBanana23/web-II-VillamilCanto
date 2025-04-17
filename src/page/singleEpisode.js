@@ -1,7 +1,7 @@
 import EpisodeCard from "../components/episodeCard";
 import { useEffect, useState, useReducer, act } from "react";
 import { useParams } from "react-router-dom"
-import styles from "../style/singleEpisode.module.css";
+import styles from "../style/characterCard.module.css";
 import { type } from "@testing-library/user-event/dist/type";
 
 export default function SingleEpisode(){
@@ -9,6 +9,7 @@ export default function SingleEpisode(){
     const charactersLikes = localStorage.getItem(`episode${id}`) !== null; 
     const [episode, setEpisode] = useState({});
     const [characters, setCharacters] = useState([]);
+    const favouriteCharacters = [...characters].sort((a, b) => b.likes - a.likes);
     const [likes, dispatch] = useReducer(likeReducer, {})
     const addLike = (char, allChar) =>{
         console.log("+",char);
@@ -59,6 +60,17 @@ export default function SingleEpisode(){
 
     return(
         <div>
+            <div className={styles.characters_container + " " + styles.fav}>
+                {favouriteCharacters && favouriteCharacters.slice(0,2).map((character) => {
+                    return (
+                        <div key={character.id}>
+                            <img src={character.image} alt={character.name} />
+                            <p>{character.name}</p>
+                            <p>{character.likes}</p>
+                        </div>
+                    )
+                })}
+            </div>
             <EpisodeCard 
                 id={episode.id}
                 name={episode.name}

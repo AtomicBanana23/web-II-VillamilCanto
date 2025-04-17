@@ -15,6 +15,7 @@ export default function Menu(){
                   <div className={styles.nav_container}>
                     <div className={styles.nav_item}><Link to="/">Home</Link></div>
                     <div className={styles.nav_item}><Link to="/episodes">Episodes</Link></div>
+                    <div className={styles.nav_item}><Link to="/characters">Characters</Link></div>
                   </div>
                 </nav>
                </header>

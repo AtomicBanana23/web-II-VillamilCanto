@@ -9,7 +9,7 @@ export default function Episodes() {
     useEffect(() => {
             const fetchEpisodes = async () => {
                 const data = await getEpisodes();
-                setEpisodeData(data);
+                setEpisodeData(data.results);
             }
             fetchEpisodes();
         }, [])
@@ -18,7 +18,7 @@ export default function Episodes() {
         <div>
             <h1>Episodes</h1>
             <div className="">
-                {episodeData.results && episodeData.results.map((item) => {
+                {episodeData && episodeData.map((item) => {
                     return(
                         <div>
                             <EpisodeCard 
