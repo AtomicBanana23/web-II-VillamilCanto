@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import EpisodeCard from "../components/episodeCard";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+import styles from '../style/episodeList.module.css';
+
 
 export default function Episodes() {
 
+    const navigate = useNavigate();
     const [episodeData, setEpisodeData] = useState([]);
 
     useEffect(() => {
@@ -16,19 +19,17 @@ export default function Episodes() {
 
     return(
         <div>
-            <h1>Episodes</h1>
-            <div className="">
+            <div className={styles.episode_container}>
+               <h1>Episodes</h1>
                 {episodeData && episodeData.map((item) => {
                     return(
-                        <div>
+                        <div className={styles.episode_card} onClick={() => navigate(`/episode/${item.id}`)}>
                             <EpisodeCard 
                             id={item.id}
                             name={item.name}
                             air_date={item.air_date}
                             episode={item.episode}>
-    
                             </EpisodeCard>
-                            <a href={`/episode/${item.id}`}>View</a>
                         </div>
                     )
                 })}

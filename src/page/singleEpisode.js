@@ -2,7 +2,8 @@ import EpisodeCard from "../components/episodeCard";
 import { useEffect, useState, useReducer, act } from "react";
 import { useParams } from "react-router-dom"
 import styles from "../style/characterCard.module.css";
-import { type } from "@testing-library/user-event/dist/type";
+import CharacterCard from "../components/characterCard";
+import styles2 from "../style/singleEpisode.module.css";
 
 export default function SingleEpisode(){
     const id = useParams().id;
@@ -59,33 +60,40 @@ export default function SingleEpisode(){
 
 
     return(
-        <div>
-            <div className={styles.characters_container + " " + styles.fav}>
-                {favouriteCharacters && favouriteCharacters.slice(0,2).map((character) => {
-                    return (
-                        <div key={character.id}>
-                            <img src={character.image} alt={character.name} />
-                            <p>{character.name}</p>
-                            <p>{character.likes}</p>
-                        </div>
-                    )
-                })}
-            </div>
-            <EpisodeCard 
+        <div className={styles2.container}>
+            <EpisodeCard
                 id={episode.id}
                 name={episode.name}
                 air_date={episode.air_date}
                 episode={episode.episode}>
             </EpisodeCard>
 
+            <div className={styles.characters_container + " " + styles.fav}>
+                {favouriteCharacters && favouriteCharacters.slice(0,3).map((character) => {
+                    return (
+                        <div>
+                            <CharacterCard
+                                id={character.id}
+                                name={character.name}
+                                image={character.image}>
+                            </CharacterCard>
+                            <p>{character.likes}</p>
+                        </div>
+                    )
+                })}
+            </div>
+
             <div className={styles.characters_container}>
                 {characters && characters.map((character) => {
                     return (
-                        <div key={character.id}>
-                            <img src={character.image} alt={character.name} />
-                            <p>{character.name}</p>
+                        <div>
+                            <CharacterCard
+                                id={character.id}
+                                name={character.name}
+                                image={character.image}>
+                            </CharacterCard>
                             <p>{character.likes}</p>
-                            <button onClick={() => addLike(character, characters)}>Like</button> <button onClick={() => subLike(character, characters)}>Dislike</button>
+                            <button className={styles2.like} onClick={() => addLike(character, characters)}>Like</button> <button className={styles2.dislike} onClick={() => subLike(character, characters)}>Dislike</button>
                         </div>
                     )
                 })}

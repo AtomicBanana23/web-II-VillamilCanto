@@ -1,0 +1,45 @@
+.container{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    height: 80vh;
+}
+
+.image_container{
+    background-image: url('../imgs/rick-and-morty-falling-portal-to-portal-carter-briar-transparent.png');
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: fadeIn 1s ease forwards;
+    width: 50%;
+}
+
+.text_container{
+    width: 50%;
+}
+
+.text_container h1 {
+    font-size: 3rem;
+    color: #00ff88;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 5px #000;
+  }
+  
+  .text_container p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 16px;
+    border-radius: 8px;
+  }
+
+@keyframes fadeIn {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+}
