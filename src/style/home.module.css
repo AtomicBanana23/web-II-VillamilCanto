@@ -1,45 +1,73 @@
 .container{
-    margin-top: 20px;
-    margin-bottom: 20px;
+  margin: 0px;
+}
+
+.home_image {
+  background: url('https://cdn.pixabay.com/photo/2019/07/15/08/32/australia-4338882_1280.jpg');
+  height: 40vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.home_image h3{
+  padding: 0px;
+  margin-top: 10px;
+  margin-left: 15px;
+  color: white;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.search_input{
+  margin-left: 15px;
+  width: 50%;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  padding-left: 10px;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.property_container{
+  background-color: #0f172a;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+
+@media (max-width: 768px) {
+  .property_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    padding: 2rem;
+  }
+
+  .home_image {
     display: flex;
-    height: 80vh;
-}
-
-.image_container{
-    background-image: url('../imgs/rick-and-morty-falling-portal-to-portal-carter-briar-transparent.png');
-    background-size:contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    animation: fadeIn 1s ease forwards;
-    width: 50%;
-}
-
-.text_container{
-    width: 50%;
-}
-
-.text_container h1 {
-    font-size: 3rem;
-    color: #00ff88;
-    margin-bottom: 20px;
-    text-shadow: 0 2px 5px #000;
-  }
-  
-  .text_container p {
-    font-size: 1.5rem;
-    line-height: 1.6;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 16px;
-    border-radius: 8px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
-@keyframes fadeIn {
-    from {
-      transform: translateY(20px);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0px);
-      opacity: 1;
-    }
+  .home_image h3{
+  }
+
+  .search_input{
+  }
+
+  .property_container {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
 }

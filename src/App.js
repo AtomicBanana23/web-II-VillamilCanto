@@ -1,11 +1,10 @@
 import './App.css';
-import { UserContextProvider } from './context/user-context';
-import Menu from './page/base/Menu';
+import Home from './page/Home';
 
 export default function App() {
   return (
     <div>
-      <Menu />
+      <Home />
     </div>
   );
 }
