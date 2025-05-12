@@ -37,7 +37,7 @@
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-.property_container{
+.meal_container{
   background-color: #0f172a;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -46,7 +46,7 @@
 }
 
 @media (max-width: 768px) {
-  .property_container {
+  .meal_container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 24px;
@@ -66,7 +66,7 @@
   .search_input{
   }
 
-  .property_container {
+  .meal_container {
     grid-template-columns: 1fr;
     padding: 1rem;
   }

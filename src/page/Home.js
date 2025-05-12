@@ -1,32 +1,32 @@
 import style from '../style/home.module.css';
-import PropertyCard from '../components/propertyCard';
+import MealCard from '../components/mealCard.js';
 import { useState, useEffect } from 'react';
 
 export default function Home(){
-    const [allProperties, setAllProperties] = useState([]);
-    const [properties, setProperties] = useState([]);
+    const [allMeals, setAllMeals] = useState([]);
+    const [meals, setMeals] = useState([]);
     const [filters, setFilters] = useState(" ");
 
-    console.log(allProperties);
+    console.log(allMeals);
 
     useEffect(() => {
-        fetchProperties();
+        fetchMeals();
     }, []);
 
     useEffect(() => {
-        const filteredProperties = allProperties.filter((property) => {
-            return property.description.toLowerCase().includes(filters.toLowerCase());
+        const filteredMeals = allMeals.filter((meal) => {
+            return meal.strMeal.toLowerCase().includes(filters.toLowerCase());
         });
-        setProperties(filteredProperties);
-    }, [filters, allProperties]);
+        setMeals(filteredMeals);
+    }, [filters, allMeals]);
     
-    const fetchProperties = async (query = "") => {
+    const fetchMeals = async (query = "") => {
         try {
-          const res = await fetch(`https://raw.githubusercontent.com/devchallenges-io/curriculum/refs/heads/main/4-frontend-libaries/challenges/group_1/data/property-listing-data.json`);
+          const res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood`);
           const data = await res.json();
-          setAllProperties(data);
+          setAllMeals(data.meals);
         } catch (error) {
-          console.error("Error fetching properties:", error);
+          console.error("Error fetching meals:", error);
         }
       };
 
@@ -38,26 +38,20 @@ export default function Home(){
     return(
         <div className={style.container}>
             <div className={style.home_image}>
-                <h3>Book unique places to stay and things to do.</h3>
-                <h3>Unforgettable trips start with Airbnb.</h3>
-                <input type="text" placeholder="Try 'New York'" className={style.search_input} onChange={watchForChanges}/>
+                <h3>All your favourite recipies.</h3>
+                <h3>For every day meals.</h3>
+                <input type="text" placeholder="Try 'Soup'" className={style.search_input} onChange={watchForChanges}/>
             </div>
-            <div className={style.property_container}>
-                {properties &&  properties.map((property =>{
+            <div className={style.meal_container}>
+                {meals &&  meals.map((meal =>{
                     return(
-                            <PropertyCard 
-                                key={property.id}
-                                id={property.id}
-                                image={property.image}
-                                title={property.title}
-                                description={property.description}
-                                price={property.price} 
-                                rating={property.rating}
-                                people={property.capacity.people}
-                                superHost={property.superhost}
-                                bedrooms={property.capacity.bedrooms}
+                            <MealCard 
+                                key={meal.idMeal}
+                                id={meal.idMeal}
+                                image={meal.strMealThumb}
+                                title={meal.strMeal}
                             >
-                            </PropertyCard>
+                            </MealCard>
                     )
                 }))}
             </div>
