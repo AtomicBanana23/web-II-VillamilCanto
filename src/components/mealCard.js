@@ -1,5 +1,4 @@
 import styles from '../style/propertyCard.module.css';
-import { FaBed, FaUserFriends, FaStar } from 'react-icons/fa';
 
 export default function MealCard({ id, image, title}) {
     return (
