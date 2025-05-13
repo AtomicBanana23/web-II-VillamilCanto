@@ -1,9 +1,9 @@
 import style from '../style/home.module.css';
 import MealCard from '../components/mealCard.js';
 import { useState, useEffect } from 'react';
-import { FaMagnifyingGlass } from "react-icons/fa6";
-
-export default function Home(){
+import { useNavigate } from 'react-router-dom';
+export default function Home() {
+    const navigate = useNavigate();
     const [allMeals, setAllMeals] = useState([]);
     const [meals, setMeals] = useState([]);
     const [filters, setFilters] = useState(" ");
@@ -12,7 +12,7 @@ export default function Home(){
     console.log(allMeals);
 
     useEffect(() => {
-        fetchMeals();
+        fetchMeals("Beef");
     }, []);
 
     useEffect(() => {
@@ -34,23 +34,23 @@ export default function Home(){
         });
         setMeals(filteredMeals);
     }, [filters, allMeals]);
-    
+
     const fetchMeals = async (query = "") => {
         try {
-          const res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${query}`);
-          const data = await res.json();
-          setAllMeals(data.meals);
+            const res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${query}`);
+            const data = await res.json();
+            setAllMeals(data.meals);
         } catch (error) {
-          console.error("Error fetching meals:", error);
+            console.error("Error fetching meals:", error);
         }
-      };
+    };
 
-      const watchForChanges = (e) => {
+    const watchForChanges = (e) => {
         console.log(e.target.value);
         setFilters(e.target.value);
-      }
+    }
 
-    return(
+    return (
         <div className={style.container}>
             <div className={style.home_image}>
                 <h3>All your favourite recipies.</h3>
@@ -69,11 +69,11 @@ export default function Home(){
                     })}
                 </div>
                 <div>
-                    <input type="text" placeholder="🔍Search recipes and more..." className={style.search_input} onChange={watchForChanges}/>
+                    <input type="text" placeholder="🔍Search recipes and more..." className={style.search_input} onChange={watchForChanges} />
                     <div className={style.meal_container}>
-                        {meals &&  meals.map((meal =>{
-                            return(
-                                <MealCard 
+                        {meals && meals.map((meal => {
+                            return (
+                                <MealCard
                                     key={meal.idMeal}
                                     id={meal.idMeal}
                                     image={meal.strMealThumb}
