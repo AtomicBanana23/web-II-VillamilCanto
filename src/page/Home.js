@@ -37,7 +37,7 @@ export default function Home(){
     
     const fetchMeals = async (query = "") => {
         try {
-          const res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood`);
+          const res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${query}`);
           const data = await res.json();
           setAllMeals(data.meals);
         } catch (error) {
@@ -61,7 +61,7 @@ export default function Home(){
                     <div>Categories</div>
                     {categories && categories.map((category) => {
                         return (
-                            <div key={category.idCategory} className={style.category_card}>
+                            <div key={category.idCategory} className={style.category_card} onClick={() => fetchMeals(category.strCategory)}>
                                 <img src={category.strCategoryThumb} alt={category.strCategory} />
                                 <h3>{category.strCategory}</h3>
                             </div>

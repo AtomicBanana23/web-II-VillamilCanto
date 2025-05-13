@@ -1,4 +1,4 @@
-import styles from '../style/propertyCard.module.css';
+import styles from '../style/mealCard.module.css';
 
 export default function MealCard({ id, image, title}) {
     return (

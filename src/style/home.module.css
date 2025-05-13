@@ -29,22 +29,34 @@
 }
 
 .category_card{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   background-color: #0f172a;
   color: white;
   border-radius: 1rem;
   padding: 1rem;
   margin: 1rem;
   text-align: center;
+  overflow: hidden;
   cursor: pointer;
-  transition: transform 0.2s; 
+  transition: all 0.3s ease; 
   border: 1px solid #475569;
 }
 
 .category_card:hover{
-  transform: scale(1.05); 
+  background-color: rgba(223, 208, 0, 0.959);
 }
+
+.category_card h3{
+  padding-left: 4rem;
+}
+
 .category_card img{
-  width: 100%;
+  position: absolute;
+  translate: -70%;
+  width: 100px;
   height: auto;
   border-radius: 1rem;
 }
