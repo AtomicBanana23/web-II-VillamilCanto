@@ -1,9 +1,7 @@
 import style from '../style/home.module.css';
 import MealCard from '../components/mealCard.js';
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 export default function Home() {
-    const navigate = useNavigate();
     const [allMeals, setAllMeals] = useState([]);
     const [meals, setMeals] = useState([]);
     const [filters, setFilters] = useState(" ");
@@ -35,7 +33,7 @@ export default function Home() {
         setMeals(filteredMeals);
     }, [filters, allMeals]);
 
-    const fetchMeals = async (query = "") => {
+    const fetchMeals = async (query = "Beef") => {
         try {
             const res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${query}`);
             const data = await res.json();

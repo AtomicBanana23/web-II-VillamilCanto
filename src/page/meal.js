@@ -1,6 +1,7 @@
+import { useParams } from "react-router-dom";
+
 export default function Meal(){
     const id = useParams().id;
-
     return(
         <div>
             <h1>Meal {id}</h1>
