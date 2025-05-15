@@ -2,7 +2,6 @@ import {Routes, Route} from "react-router-dom";
 
 import Home from '../page/Home';
 import Meal from "../page/meal";
-import Episodes from "../page/Episodes";
 
 export default function MyRouters() {
   return (
