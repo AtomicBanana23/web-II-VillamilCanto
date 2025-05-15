@@ -7,8 +7,6 @@ export default function Home() {
     const [filters, setFilters] = useState(" ");
     const [categories, setCategories] = useState([]);
 
-    console.log(allMeals);
-
     useEffect(() => {
         fetchMeals("Beef");
     }, []);
@@ -44,7 +42,6 @@ export default function Home() {
     };
 
     const watchForChanges = (e) => {
-        console.log(e.target.value);
         setFilters(e.target.value);
     }
 
@@ -52,7 +49,7 @@ export default function Home() {
         <div className={style.container}>
             <div className={style.home_image}>
                 <h3>All your favourite recipies.</h3>
-                <h3>For every day meals.</h3>
+                <h3>For everyday meals.</h3>
             </div>
             <div className={style.body_container}>
                 <div className={style.categories_container}>
